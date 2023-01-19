@@ -1,0 +1,47 @@
+﻿now we are going to get our data from  db using entity framework
+
+entity framework is a tool we use to access the db
+
+more accurately its classified as orm
+
+
+in old days we had to do this mapping manually which involved opening a connection to db
+
+with orm we work at a higher level abstraction
+
+
+it provides a class called dbContext	
+
+dbContext has one or more dbSet 's which represents tables in our db	
+
+we use linq to query these db sets
+
+and entity framework will translate our linq queries to sql at run time
+
+it opens the db maps the data
+
+
+there are two ways to use entity framwork
+
+db first and code first
+
+***************** dbFirst workflow
+
+in this we generate the corresponding domain classes after creation of database tables
+
+
+
+***************** the other way is to create domain classes first and let the entity framework create the db tables for us
+
+
+i personally favor code first to db first
+
+increased productivity
+
+full versioning of db using migrations
+
+much easier to build an integration test db		
+
+myth :
+1 code first work flow on legacy db can be used very efficiently
+2 it gives you full control over db
