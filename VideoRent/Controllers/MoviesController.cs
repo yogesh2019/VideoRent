@@ -16,8 +16,8 @@ namespace VideoRent.Controllers
             var movie = new Movies() { Name = "shrek !" };
             var customers = new List<Customer>
             {
-                new Customer { Name =  "Customer 1"},
-                new Customer { Name = "Customer 2"}
+                new Customer { id =  1},
+                new Customer { id = 2}
 
             };
             var viewModel = new RandomMovieViewModel

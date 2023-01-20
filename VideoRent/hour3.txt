@@ -45,3 +45,116 @@ much easier to build an integration test db
 myth :
 1 code first work flow on legacy db can be used very efficiently
 2 it gives you full control over db
+
+
+
+in code first we start with code everytime we modify our domain model
+we create a migration and run it on the db
+
+let me show you how it works
+
+
+package manager console alt + .
+
+first time you need to enable them
+
+when you type 
+
+enable-migrations
+
+now you see a new folder migrations
+
+
+lets add first migration
+
+since this is a first change i am gonna call it initial model
+
+
+under this c sharp 
+
+we will see 
+
+aspNetRoles
+aspNetUserRoles
+aspNetUsers
+
+
+so where these tables are coming from 
+
+weill this is a part of asp.net identity
+which our projects uses to control authentication and authorization
+
+
+let me show you something
+
+expand models => identity models
+
+
+here we have two classes 
+application user
+
+and application Db context
+
+which der from identitydbContext
+
+this is a gateway to our db
+
+
+
+this identitydbContext is a part of asp.net identity framwork
+
+
+so when i executed add migration 
+
+it looked at our applicationdbContext
+
+and it discovered dbSets in identityDbContext
+
+here we are had all the user
+
+that is why in our call we had created these tables
+
+
+now we do not see any db sets for movies and customers
+so i go back to our identityModels
+
+
+so this dbSet represennt Customer table in our database
+
+now i go back to our console and create our migration
+
+since it is already there is am gonna use --force swith to override it
+
+add-migration intitialModel -force
+
+lets reload
+
+now lets go back to our migration class
+
+so here we see and attempt to create table with the following names
+
+now lets run this migration and generate our db
+
+
+cls
+
+update-databse
+
+
+
+if i go under show files
+we go under appdata
+we got this database file lets double click it
+
+so here is our db
+
+we got our tables
+
+so we have tables asp.net which are used for controlling authentication and authorization
+
+we also have customers table with id and name
+
+there is one more table here which we should not touch called migration history
+
+
+
