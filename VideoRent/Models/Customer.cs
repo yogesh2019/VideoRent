@@ -7,6 +7,12 @@ namespace VideoRent.Models
 {
     public class Customer
     {
-        public int id { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public bool IsSubscribedToNewLetter { get; set; }
+        public MembershipType MembershipType { get; set; }
+        public byte MembershipTypeId { get; set; }
+
+
     }
 }

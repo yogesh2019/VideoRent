@@ -158,3 +158,72 @@ there is one more table here which we should not touch called migration history
 
 
 
+************************************ changing the model ***********
+
+our dommain model is very simple here so will add new props
+
+
+customer => name, isSubscribedToNewsLetter, MembershipType
+
+membership => payAsYouGo 
+
+monthly =>  $30       10%
+quaterly => $90       15%
+annual =>   $300      20%
+
+
+so model this we need a membership type signupfee, duration, discountRate
+
+each customer should have only one and one membership type
+
+
+when following for code first 
+
+instead of making changes in one go 
+
+we should make changes in small parts
+
+and run small migrations
+
+so back to customers and add
+
+name, bool isSubscribedtoNews
+
+we can name it AddIsSubscribedToCustomer
+
+migration created 
+now update-database
+
+now going back to Model
+
+add a new class MembershipType
+
+for signup fee we gonna use short
+
+for durationInMonths
+
+for discountRate lets use byte
+
+
+lets use byte for id as we have only few membership type
+
+now we need to associate our customer class with membership type
+
+we go to our Customer class 
+
+and add public MembershipType MembershipType {get; set;}
+
+
+this navigation property is useful when you want to load and object and its related object from db
+
+sometimes for optimization we dont want to load the entire membership object
+
+for that you may need a foreign key
+
+public byte MembershipTypeId
+
+entity framewrk recognises this as a foreign key
+
+
+
+now we need to add a migration
