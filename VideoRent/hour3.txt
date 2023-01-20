@@ -227,3 +227,61 @@ entity framewrk recognises this as a foreign key
 
 
 now we need to add a migration
+
+
+
+
+
+******       seeding the database
+now if we see under db member ship types
+
+currently this table is empty and we need to populate this table with some records
+
+so our dev, test and prod should have exact same membership types
+
+	
+so to make this consistency, 
+but we never touch db in code first
+
+everychange in db should go through migration
+
+
+so we are not supposed to open this table and insert few records
+
+so we use a migration, 
+i am gonna add a migration, and call it PopulateMembershipTypes
+
+
+so its an empty migration
+
+by going in up()
+
+we can add 
+
+
+Sql("Insert into MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRates) Values (1,0,0,0)")
+
+we can do ctrl +d 
+
+Sql("Insert into MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRates) Values (1,0,0,0)")
+Sql("Insert into MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRates) Values (2,30,1,10)")
+Sql("Insert into MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRates) Values (3,90,3,15)")
+Sql("Insert into MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRates) Values (4,300,12,20)")
+
+
+so with code first we do have full  control on db
+
+we can run any query
+
+
+now we run this migration
+update-database
+
+
+while time of depoying our application we can give all this database from beginning of time to last
+
+and using a cmd in pmc we can generate a sql script to include all these changes
+
+so with code first work flow we have full control over versioning of our database
+
+in the next we will talk about overriding code first conventions
