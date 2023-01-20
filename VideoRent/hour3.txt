@@ -285,3 +285,38 @@ and using a cmd in pmc we can generate a sql script to include all these changes
 so with code first work flow we have full control over versioning of our database
 
 in the next we will talk about overriding code first conventions
+
+
+*********** overriding conventions **********
+
+
+the name is set by entity framwork as nullable
+
+now lets see how we can over ride these default conventions
+
+
+in our model class customer
+
+above the property 
+
+we define the annotation called 
+[Required]
+public string Name {get; set;}
+
+
+with this our customer name will no longer be nullable
+[StringLength(255)]
+
+
+this approach is called annotations
+
+but it has some limitations
+
+
+now we have create a new migration
+
+as we have changed our domain model
+add-migration ApplyAnnotationstoCustomerName	
+
+next we are gonna take a look at how to query objects using entity framework
+
