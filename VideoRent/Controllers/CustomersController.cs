@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using VideoRent.Models;
-
+using System.Data.Entity;
 namespace VideoRent.Controllers
 {
     public class CustomersController : Controller
@@ -20,7 +20,7 @@ namespace VideoRent.Controllers
         }
         public ViewResult Index()
         {
-            var customers = _context.Customers;  // _context.Customers.ToList();
+            var customers = _context.Customers.Include(c => c.MembershipType);  // _context.Customers.ToList();
 
             return View(customers);
         }

@@ -420,3 +420,38 @@ so the arbitrary data be deployed to our database
 
 john smith false 1
 mary williams true 2
+
+what if we want to have another column for discount rate
+under views => customers > index
+
+first i am gonna add one more heading
+
+th Discount Rate
+
+now we render another td here 
+with membershipType.discountRate
+
+
+we will get error 
+
+because by default entity from only loads the customer object 
+and not their related object
+
+
+so this is why we are getting null
+
+now we need to load customers and membership types together 
+this is called eager loading
+
+
+we go back to our _context.Customers.Indlude(c => c.membershiptype)
+
+we have to get it from systems.entity
+
+
+now to make it more user friends lets add % symbol here
+
+razor view is smartenought to understand that this % is a text
+
+
+options keyboard
