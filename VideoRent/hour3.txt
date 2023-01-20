@@ -320,3 +320,103 @@ add-migration ApplyAnnotationstoCustomerName
 
 next we are gonna take a look at how to query objects using entity framework
 
+******************** quering objects
+
+this is my solution to the exercise
+
+
+i have a method called index
+
+which return View(customers)
+
+here in the action you see a call to getCustomers() method
+
+
+let take a look at the implemention of this method
+
+private IEnumerable<Customer> GetCustomers(){
+	 return new List <Customer>{
+		   new Customer{id = 1, Name = "John Smith"},
+		   new Customer{id = 2, Name = "Mary Williams"}
+	 }
+}
+
+
+firstly we need a dbContext to access the database
+
+so by convention we declare a private field
+
+private ApplicationDbContext _context;
+
+we need to initilise is in the constructors
+
+ctor
+
+public CustomersContrllers(){
+  _context = new ApplicationDbContext();
+}
+
+dbContext is a disposable object so we need to properly dispose this object
+
+the proper way to do this is to 
+
+override dispose method of base class
+
+protected override void Dispose (bool disposing){
+		  _context.Dispose();
+}
+
+
+the second part i will show how we can delegate
+
+instatiating and disposing object using dependency injection framework
+
+now instead of initializing or cusstomers with getCustomers
+
+var customers = _context.Customers;
+
+
+so this Customers is a property is a DbSet defined in our dbContext
+
+
+one thing to know about entity framework
+
+when the above line is executed it will not query customers
+
+
+this is called deferred execution
+
+the query is executed when we iterate over the customers
+
+for example in our view
+
+alternatively we can immedietely execute the query by callin the toList() method
+
+
+
+we need to make one more change
+
+and that is in the details method
+
+var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+now we can get rid of getCustomer method
+
+now to test this i will go to the customers table and populate with some recs
+
+so right click customers view data
+
+we just learned that we should not modify this database
+
+in the last lecture we had a different scenario
+
+memmber ship types are reference data so they should be consistent accross differennt env
+
+it does not matter if we have two customers in dev database and 3 in test db
+
+so during deployement we will only be putting migrations
+
+so the arbitrary data be deployed to our database
+
+john smith false 1
+mary williams true 2

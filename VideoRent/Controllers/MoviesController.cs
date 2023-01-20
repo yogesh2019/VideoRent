@@ -10,6 +10,10 @@ namespace VideoRent.Controllers
 {
     public class MoviesController : Controller
     {
+        public ActionResult Index()
+        {
+            return Content("movie");
+        }
         // GET: Movies/Random   
         public ActionResult Random()
         {

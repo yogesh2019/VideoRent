@@ -200,6 +200,10 @@
     <Compile Include="Migrations\202301201030225_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>202301201030225_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301201234395_AddCustomerRecords.cs" />
+    <Compile Include="Migrations\202301201234395_AddCustomerRecords.Designer.cs">
+      <DependentUpon>202301201234395_AddCustomerRecords.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -271,6 +275,7 @@
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -306,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301201030225_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>202301201030225_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301201234395_AddCustomerRecords.resx">
+      <DependentUpon>202301201234395_AddCustomerRecords.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
