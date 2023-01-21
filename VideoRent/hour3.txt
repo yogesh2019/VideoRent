@@ -465,3 +465,11 @@ our membership type currently doesnot have a name
 so you need to modify the domain class and update the database
 
 and create another migration to update the existing
+
+**************** exercise 2
+
+in the customeer details page 
+we want more details about that customer
+we need membershiptype
+and birthdate
+so birthdate is an optional or nullable columnn

@@ -212,6 +212,30 @@
     <Compile Include="Migrations\202301201651052_addingValuestoNameinMembershipType.Designer.cs">
       <DependentUpon>202301201651052_addingValuestoNameinMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301210701345_AddingBirthDate.cs" />
+    <Compile Include="Migrations\202301210701345_AddingBirthDate.Designer.cs">
+      <DependentUpon>202301210701345_AddingBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301210708223_AddingBirthDateNull.cs" />
+    <Compile Include="Migrations\202301210708223_AddingBirthDateNull.Designer.cs">
+      <DependentUpon>202301210708223_AddingBirthDateNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301210809404_AddingBirthDateRecords.cs" />
+    <Compile Include="Migrations\202301210809404_AddingBirthDateRecords.Designer.cs">
+      <DependentUpon>202301210809404_AddingBirthDateRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301210844135_notNullBirthDate.cs" />
+    <Compile Include="Migrations\202301210844135_notNullBirthDate.Designer.cs">
+      <DependentUpon>202301210844135_notNullBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301210917578_AddingRequiredToMembership.cs" />
+    <Compile Include="Migrations\202301210917578_AddingRequiredToMembership.Designer.cs">
+      <DependentUpon>202301210917578_AddingRequiredToMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301210918508_AddingRequiredToMembershipModel.cs" />
+    <Compile Include="Migrations\202301210918508_AddingRequiredToMembershipModel.Designer.cs">
+      <DependentUpon>202301210918508_AddingRequiredToMembershipModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -328,6 +352,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301201651052_addingValuestoNameinMembershipType.resx">
       <DependentUpon>202301201651052_addingValuestoNameinMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301210701345_AddingBirthDate.resx">
+      <DependentUpon>202301210701345_AddingBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301210708223_AddingBirthDateNull.resx">
+      <DependentUpon>202301210708223_AddingBirthDateNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301210809404_AddingBirthDateRecords.resx">
+      <DependentUpon>202301210809404_AddingBirthDateRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301210844135_notNullBirthDate.resx">
+      <DependentUpon>202301210844135_notNullBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301210917578_AddingRequiredToMembership.resx">
+      <DependentUpon>202301210917578_AddingRequiredToMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301210918508_AddingRequiredToMembershipModel.resx">
+      <DependentUpon>202301210918508_AddingRequiredToMembershipModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

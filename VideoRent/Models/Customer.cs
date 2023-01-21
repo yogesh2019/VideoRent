@@ -13,8 +13,11 @@ namespace VideoRent.Models
         [StringLength(255)]
         public string Name { get; set; }
         public bool IsSubscribedToNewLetter { get; set; }
+        [Required]
         public MembershipType MembershipType { get; set; }
+        [Required]
         public byte MembershipTypeId { get; set; }
+        public DateTime? BirthDate { get; set; }
 
 
     }
