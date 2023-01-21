@@ -455,3 +455,13 @@ razor view is smartenought to understand that this % is a text
 
 
 options keyboard
+
+
+************** exercise 1
+want to replace discount rate with name of membership type.
+
+our membership type currently doesnot have a name 
+
+so you need to modify the domain class and update the database
+
+and create another migration to update the existing
