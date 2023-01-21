@@ -98,3 +98,95 @@ label
 
 
 }
+
+*********Labels
+
+now here if we see the name of the label is exactly the same as
+the corresponding property in the customer class
+
+so what if here instead of birthdate i want to display
+
+date Of birth
+
+
+we go to our customer class
+
+[Display(Name = "Date of Birth")]
+public DateTime? Birthdate
+
+
+the problem with this approachh is we have to recompile our code
+i personally prefer to use this helper method
+
+
+now i want to add a drop down list to select a membershihp type 
+for our customer 
+
+
+so 
+back in our controller first we need to get the list of 
+membershiptypes
+
+_context.memebershipmodel
+
+
+so we need to add it as dbset here
+
+_context.MembershipTypes.toList()
+
+we can pass in the view
+
+but this will not work when we are required to edit
+
+so for this case we will need a viewModel
+
+
+NewCustomerviewModel under viewModel
+
+public class NewcustomerViewModel{
+
+public IEnumerable<MembershipType> MembershipTypes
+
+so if the change the collection in future
+
+as long as the collection implement IEnumerable its good to iterate
+
+so here we will use Customer direclty
+
+this is based on our requ
+
+
+public class NewcustomerViewModel{
+
+public IEnumerable<MembershipType> MembershipTypes
+
+public Customer Customer {get; set;}
+}
+
+so we send this view model by creating a new object
+
+and we update this in our view
+
+
+now inorder to get the dropdown list
+
+
+now instead of textboxfor
+
+i will use dropdownlist for 
+
+this is for membershiptypeid
+
+and after that i need to give 
+
+the class which will initialize
+
+and then value 
+and then the text which will be displayed
+
+
+[Display(Name = "Membership Type")]
+MembershipTypeId
+
+
+}
