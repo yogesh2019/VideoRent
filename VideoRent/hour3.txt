@@ -473,3 +473,34 @@ we want more details about that customer
 we need membershiptype
 and birthdate
 so birthdate is an optional or nullable columnn
+
+
+
+************ exercise 3 : i want to populate this list of movies from database
+
+and we want a new column genre
+
+similar to membership type genre is reference data that needs to deployed with out application
+
+so make sure to populate the genres table using migrations
+
+for the moveis 
+we need genre
+release DAte
+date added
+number in stocks
+
+hints:
+
+the first step is to add a dbSet of movies
+
+in identity models file
+
+the reason why we need is if the movie is not referenced as dbSet
+
+it wont be included in your migration
+
+
+add additional properties in Movie
+populate genres table with a migration
+modify moviescontroller and its views	

@@ -5,9 +5,9 @@ using System.Web;
 
 namespace VideoRent.Models
 {
-    public class Movies
+    public class Genre
     {
-        public int Id { get; set; }
+        public short id { get; set; }
         public string Name { get; set; }
     }
 }
