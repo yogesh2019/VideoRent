@@ -1,0 +1,100 @@
+in this section we are going to add forms
+that will help us add and edit customer and movies
+
+to create a form that add customer we need an action
+
+this action should return a view that includes the form
+
+
+under customerContoller
+
+mvcaction4 tab
+
+now since view is red
+
+here as we dont have this view
+
+so we will go and create a view
+
+create a non partial view and layout is selected
+
+lets change the title to new customer
+
+now to render a form we are gonna use html helper method
+
+like action link
+
+@Html.BeginForm("<action_name>","<Controller_name>")
+
+this action name is red as we didn't declare
+
+now how to render the closing tag
+
+
+@using( Html.BeginForm("Create","Customer")){
+
+now here we need to follow some specific markup that bootstrap understands
+
+<div class="form-group">
+we can use label or write @Html.LabelFor()
+
+and in this we specify a lambda expression that gives us the name of of the target property of the model used in this form
+
+
+so let set the model
+
+
+@model Video.Model.Customer
+
+we can use label or write @Html.LabelFor(m => m.Name)
+
+so this will take a property as value for our html label
+
+again we can use text box 
+
+or we can use
+
+@Html.TextBoxFor(m => m.Name)
+
+
+now if we run this we have some pre properties for this tag
+
+for ex
+
+data-val
+
+we need data validation for this field
+
+so this validtion is coming from our model
+required length
+
+now as a second argument we can pass
+@Html.LabelFor(m => m.Name)
+@Html.TextBoxFor(m => m.Name , new { @class = "form-control"})
+
+</div>
+
+<div formgroup>
+
+@Html.LabelFor(m => m.BirthDate)
+@Html.TextBoxFor(m => m.BirthDate , new { @class = "form-control"})
+<div>
+
+<div formgroup>
+
+@Html.LabelFor(m => m.IsSubscribedToNewsLetter)
+@Html.CheckBoxFor(m => m.BirthDate , new { @class = "form-control"})
+<div>
+
+
+we can look for the bootstrap for check box on bootstrap site
+
+css >> form
+
+
+div class= "checkbox"
+label
+@html.CheckBoxFor(m => m.IsSubtonews) some text
+
+
+}

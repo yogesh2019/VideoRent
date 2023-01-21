@@ -18,12 +18,17 @@ namespace VideoRent.Controllers
         {
             _context.Dispose();
         }
+        public ActionResult New()
+        {
+            return View();
+        } 
         public ViewResult Index()
         {
             var customers = _context.Customers.Include(c => c.MembershipType).ToList();  // _context.Customers.ToList();
 
             return View(customers);
         }
+        
 
         public ActionResult Details(int id)
         {
