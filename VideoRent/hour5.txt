@@ -147,3 +147,24 @@ do we need to define all here
 
 another solution to refractor a magic number is using a enum
 but we may need casting to byte again to compare
+
+**************** validation summary
+some people may also like to display a list of errors at the top
+
+so at the top 
+
+we can use @Html.ValidationSummar()
+
+we see three error messages
+
+so when this form is posted value of customer id is empty
+
+so when you initilize the 
+
+var customer = new Customer()
+
+its property will be init to default values
+
+the first argument to valitionsummary(true, "please fix the error")
+
+and what is required here is to put membershipType first before dateOfbirth
