@@ -68,3 +68,55 @@ then why we are getting that validation message
 byte? so this is implicitly required
 
 since mvc framework doesn't know how to map this empty to a byte so it gives us error
+
+************************** Date Annotations
+so far we have seen Required and StringLenght
+
+Range(1,10)
+compare
+phone
+emailAddress
+
+url 
+and regex
+
+all these have their default validation message
+
+let me show you how you can override it
+
+[Required(ErrorMessage = "please enter customer's name")]
+
+
+
+
+********************** let see how to implement Custom Validation
+
+ex lets say a business logic
+
+if they want to someone to be 18 years of age
+
+before getting memebership
+
+
+so to implement this right click models
+
+add a class under models
+
+Min18YearIfAMember
+
+
+
+we need to derive this class from validation attributes 
+
+
+here we need to override is valid method
+
+
+this has two overloads
+
+one that takes a validation context and the other that takes a validationContext
+
+
+so before we implement logic
+
+let apply it as annotation

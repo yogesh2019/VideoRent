@@ -20,7 +20,7 @@ namespace VideoRent.Models
         public MembershipType MembershipType { get; set; }
         [Required]
         public byte MembershipTypeId { get; set; }
-
+        [Min18YearIfAMember]
         [Display(Name = "Date of Birth")]
         public DateTime? BirthDate { get; set; }
 
