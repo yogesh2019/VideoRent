@@ -188,3 +188,13 @@ if(!ModelState.IsValid)
  )
  }
 
+ ************* testing the api
+
+ we can see that list of our customers returns xml
+
+ media formatter return xml, json
+
+ if we refresh and see our request, 
+ under response we will see content type
+
+ when posting we need to remove the id
