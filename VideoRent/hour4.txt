@@ -247,3 +247,64 @@ mvc is smart enought to bind the customer data
 saving data
 
 _context.save() commits all transactions at one time
+
+
+******************* edit 
+
+so here is the list of our customers
+
+so i am gonna replace this readonly view of customer with edit form
+
+under the views of customer
+
+so instead of using the details action i will use the edit action
+
+
+
+so for the fourth object here we have an anonymous object with property id
+
+put the cursor here alt + enter and then enter here	
+
+Customers.SingleOrDefault( c => c.Id == Id)
+if(customer == null)
+return HttpNotFound()// gives us std 404 error
+
+
+
+otherwise is will render the customer form
+
+
+now since we want this to goto New view
+
+we will define like this return View("New")
+
+other wise it will look for edit view
+
+so first we need to initialize our viewModel
+here and then we need to initialize our membershiptypes alo here and send it
+
+
+now since we are editing a customer 
+
+lets change the viewModel name to 
+CustomerFormViewModel
+
+
+so again we need to change the New view to CustomerForm view
+
+we need to change this as well in New action
+
+New ===> CustomerForm
+
+now here we have all the data populated
+
+
+TextBoxForBirthDate
+
+takes a format string as one of its overloads
+
+{0:d MMM yyyy}
+
+and i am gonna move this checkbox to the bottom
+
+next I will show you how to update this customer
