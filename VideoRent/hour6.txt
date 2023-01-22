@@ -1,0 +1,58 @@
+﻿********* intro
+restful webservices using asp.net webapi
+we will talk about DTO 
+
+*************** what is Web ApI
+
+quick view of asp.net mvc architecture
+
+when a request arrives 
+mvc framework handles that request to an action in controller  
+
+this action most of the times returns a view
+
+which is then parsed by RazorViewEngine
+
+then html markup is generated on the server
+and then returned to the client
+
+now instead of return markup data
+
+they can also return data
+
+one benefit is
+* sending raw data requires less rescources
+* raw data requires less bandwidth
+
+so data arrives faster at client
+* we can build a broad range of client
+
+these apps simply call our endpoints
+
+get the data and generate the view locally
+
+We call this endpoint
+Dataservices or Web API
+because they just return data and not markup
+
+these are not just for our mobile and web apps
+
+they can be consumed by other websites as well
+
+for ex twitter,etc 
+
+expose public services which we can consume in our websites
+
+we can have services not only to get data 
+
+but also modifying like adding a customer
+
+
+the framework we use is 
+Asp.net Web Api
+
+
+.net core uses both asp.net and asp.net web api
+
+we will be building some app using jquery
+**********************************
