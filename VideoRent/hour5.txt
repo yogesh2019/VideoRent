@@ -168,3 +168,58 @@ its property will be init to default values
 the first argument to valitionsummary(true, "please fix the error")
 
 and what is required here is to put membershipType first before dateOfbirth
+
+************************ client side validation	
+
+while server side validation is abs crucial for secure application
+
+its nice to do validation in client side as well
+
+Benefits
+* immediate feedback
+* No waste of server side resources
+* we do server side mostly for security
+
+by default client side validation is not enabled on you asp app
+
+let see how
+
+app_start >> BundleConfig >> 
+
+we have this bundle called jqueryval
+
+if we go to solution explorer
+
+i will go in customerForm.cshtml
+
+and at the bottom
+
+@section scripts{
+	@Scripts.Render("address")
+}
+@section scripts{
+	@Scripts.Render("~/bundles/jqueryval")
+}
+
+ctrl + f5 to get fresh copy of this page
+
+so if we see in network tab ther is no call going outside
+
+
+let see how this is happening
+
+the good things about annotations is
+
+the asp.net used them for both client side and server side validation
+
+also when we use razorview helpder methods
+
+razorview engines
+
+adds additional attributes to the html markup
+
+jquery validation kicks in to see data- props
+
+one things we need to know about these validations
+
+is that they only work with standard annotation
