@@ -77,3 +77,114 @@ in terms of request types and endpoints is a standard convention referred to as 
 
 ReSt 
 representational state transfer
+
+
+
+
+
+
+********* building a web api
+
+under controller create a api folder
+
+create a controller
+and choose webapi2 controller
+
+CustomersController
+
+plural
+
+the tesxt guides us
+
+
+add the line to global.as
+
+the first things you want to note here is 
+
+this is derived from ApiController
+
+since we want to return a list of Customer
+// GEt /api/customers
+
+public IEnumerable <Customer> GetCustomers(){
+
+}
+
+we are gonna _context
+
+so lets create a private field
+
+initilize is in ctor
+
+public Customer GetCustomer(){
+.Customers.SingleOrDefault
+
+
+ if customer == null
+  throw new HttpResponseException(HttpStatusCode.NotFoun);
+
+  so this is a part of restful convention 
+  like if a resourse is not found we repond with not found
+
+  other wise 
+  return customer
+}
+
+// POST /api/customers
+
+as i want to post it on collection
+
+we should mark this action with http post
+this action will only be called if we send a post request
+
+[HttpPost]
+public Customer CreateCustomer(Customer customer)
+
+or 
+
+
+public Customer PostCustomer(Customer customer)
+
+but this can be a problem with when we refractor
+
+so i would prefer to apply this [HttpPost]
+
+
+
+if(!ModelState.IsValid)
+ throw new HttpReponseException(httpstatuscode.badrequest)
+
+ _context.Customers.Add(customer);
+ _context.SaveChanges()
+
+
+ // PUT /api/customer/1
+
+ public void UpdateCustomer (int id){
+ 
+if(!ModelState.IsValid)
+ throw new HttpReponseException(httpstatuscode.badrequest)
+
+ var customerInDb = singleorDefault( c => c.Id == id
+ 
+ if null
+	throw new HttpResponseException(HttpStatusCode.NotFound
+);
+
+  .name = name
+
+  we can use automapper
+
+  _context
+
+  httpPut
+
+  [HTTPdELETE]
+  public void DeleteCustomer(int id){
+  
+  }
+  .remove
+  .saveChanges
+ )
+ }
+
