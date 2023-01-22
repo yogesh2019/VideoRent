@@ -30,3 +30,41 @@ we need to add a place holder to add validation message
 this field is required
 
 but this is not red next i will show you how to get this as red
+
+
+styling validation errors
+
+when we click on inspect we have a class
+
+so we have to define this class in our css and apply a style
+
+go under site.css
+
+.field-validation-error{
+	color: red;
+}
+
+its good practise to highlight validation error
+
+.input-validation-error{
+	border: 2px solid red;
+}
+
+so we see a red
+
+but for MembershipType
+we dont have a validation error
+
+it will give us a message
+
+so lets clarify something here
+
+
+since we donot have required on membership type id 
+and membershiptype
+
+then why we are getting that validation message
+
+byte? so this is implicitly required
+
+since mvc framework doesn't know how to map this empty to a byte so it gives us error
