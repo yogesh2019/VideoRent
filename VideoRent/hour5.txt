@@ -1,0 +1,32 @@
+﻿you will see both server side and client side validation
+we will see forgery requests and how we can prevent them in our form
+
+mvc also uses data validation annotation to validate action parameters
+
+so Save first while getting properties from request it checks there only if they are acc to annotations
+
+here we can use ModelState.
+to get access to validation data
+
+ModelState.idValid
+
+this we can use to change the application flow
+
+if(!ModelState.isValid){
+
+this viewModel we will initialize with whatever data user is setting to customer
+	return View("CustomerForm", viewModel)
+}
+
+2nd step is to add annotation
+
+3rd step is to add validation messages
+
+we need to add a place holder to add validation message
+
+
+@html.ValidationMessageFor(m => m.Customer.Name)
+
+this field is required
+
+but this is not red next i will show you how to get this as red
