@@ -223,3 +223,53 @@ jquery validation kicks in to see data- props
 one things we need to know about these validations
 
 is that they only work with standard annotation
+
+
+
+
+
+
+
+
+******************* Anti Forgery Tokens	
+here we have a security hole in this form for customers
+
+when we click on save it sends a post request
+
+and we can see the form data in the body of this request
+
+imagine if the user leaves the site without signing out
+
+cross-site request forgery
+
+so the hacker forges a request on diff website
+in this ex hacker can create or update an existing customer
+
+and we will also not notice this on our logs 
+as the user browser is making the request
+
+so how do we prevent this 
+
+we will make sure that this request only comes from our customer form
+
+there are two steps we need to folow
+@Html.AntiForgeryToken()
+
+this method will create a token which is like a code 
+
+and we will put it in as a hidden field and also as a cookie in user's computer
+
+
+we can see if we inspect this 
+and we can also see the same in enrypted format under resources > cookies > localhost
+
+
+so in our backend we will match this hidden field with our encryption
+
+and the hidden field is only send via customer form
+
+so fi they dont match this is an attack
+
+now to perform the validation 
+
+we validate our	save method with [ValidateAntiForgeryToken]
