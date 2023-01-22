@@ -17,7 +17,6 @@ namespace VideoRent.Models
         public bool IsSubscribedToNewLetter { get; set; }
 
         [Display(Name = "Membership Type")]
-        [Required]
         public MembershipType MembershipType { get; set; }
         [Required]
         public byte MembershipTypeId { get; set; }

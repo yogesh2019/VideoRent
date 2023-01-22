@@ -190,3 +190,60 @@ MembershipTypeId
 
 
 }
+
+*************** model binding
+
+our form is ready now lets 
+implement a button and start saving a customer
+
+so will go to new view
+
+and before this curly braces i am gonna add a view
+
+type of this button should be submit
+
+btn
+btn-primay
+
+so we have a target action Create
+
+now lets create an action CALLED create()
+
+now we need to apply 
+
+[HttpPost] to this action
+
+
+so make sure this will only be called with http post and not http get
+
+
+and if your actions modify data 
+
+they should never be accesible by httpget
+
+
+now i am gonna add a parameter here
+
+public ActionResult Create (NewCustomerViewModel viewModel){
+// mvc framework will automatically map request data to this object
+
+
+so this is what we call model binding
+
+if we put our app in debug mode 
+
+and see the network tab we will see our form data
+
+
+
+so we use this properties to initilize the parameter of our action
+
+so we can expand in debug mode and see the data it is getting here
+
+now if i change this heading to customer 
+
+mvc is smart enought to bind the customer data
+}
+saving data
+
+_context.save() commits all transactions at one time
