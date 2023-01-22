@@ -308,3 +308,62 @@ takes a format string as one of its overloads
 and i am gonna move this checkbox to the bottom
 
 next I will show you how to update this customer
+
+
+
+************* updating Data
+
+note that our target action is set to create here
+
+here we have two options either i can rename it to save and use it for add and update
+
+or create a separate action for update 
+
+to we will follow first here
+
+Create ===> Save
+
+so we can check here for id
+
+if id = 0 
+
+its a new customer or else we need to update it	
+
+so to update our db customer we
+
+we need to get it from _context
+
+var customerInDb = _context.Customers.Single( c => c.Id == customer.Id);
+
+
+i dont want to handle the default case as we already have a customer
+
+TryUpdateModel(customerInDb)
+
+with this key value pairs will get updated based on the request data
+i do not like this approach as this will open up a no of issues
+
+the problem with providing third argument to update this is it will fail when you update your code in future until you update the properties here also
+
+
+
+
+
+alternatively is try setting the props manually
+
+you can use a library like autoMapper to do this
+
+
+
+
+you can also do like this Customer >>>> UpdateCustomerDto  
+this is out of scope for now
+
+now we save the object and redirect 
+
+and one thing we are missing here is we need to add id for customer as hidden field
+i prefer to put that just before the submit button
+
+@Html.HiddenFor(m => m.Customer.Id)
+
+while doing this exercise ==> you can break it to smaller steps
