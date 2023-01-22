@@ -198,3 +198,63 @@ if(!ModelState.IsValid)
  under response we will see content type
 
  when posting we need to remove the id
+
+
+
+ ************ data transfer object
+
+ there are couple of issues with this api
+
+ the api recieves or returns Customer objects 
+
+ whats wrong with this
+
+ well this customer object is part of the domain model of our application
+
+ its consists implementation detail which can change frequently
+
+ and these changes can break clients that are dependent on the customer object
+
+
+ so we need to make the contract of this api as stable as possible
+
+ yes its can change
+
+ but the public model changes at a slower pace than our domain model
+
+ we use DTO for this
+
+ this dto is plain Data Structure and is used to transfer data from client to server
+
+
+ by this we reduce chances of breaking as we refractor our domain model
+
+ how to design this is different
+
+ but
+
+ the main thing is your api should never return or recieve DOMAIN OBJECT
+
+ 2. another things is by using your domain object your are opening security holes in your application
+
+  a hacker can easily map data to domain object and they will easily be mapped
+
+
+  if we use DTO
+  if can simply exculde the props that can be updated
+
+
+  in solution explorer add a new folder Dto
+
+
+  create a new Class CustomerDto
+
+  i will copy all from customer class
+
+  so since this create depency 
+
+  i want to create another dto for membershihptype
+
+  this make you Dto's compeletly decoupled from you domain objects
+
+  next i will show you how to use automapper to map these objects
