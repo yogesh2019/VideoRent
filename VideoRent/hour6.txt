@@ -55,4 +55,25 @@ Asp.net Web Api
 .net core uses both asp.net and asp.net web api
 
 we will be building some app using jquery
-**********************************
+
+**********************************RestFul Convention
+
+we will be building CRUD for customers
+
+end point 
+/api/customer
+
+and we are going to support few different types of requests
+
+get 
+get 
+post
+put
+delete
+
+so what you see here is
+
+in terms of request types and endpoints is a standard convention referred to as REST full convenction
+
+ReSt 
+representational state transfer
