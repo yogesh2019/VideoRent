@@ -120,3 +120,30 @@ one that takes a validation context and the other that takes a validationContext
 so before we implement logic
 
 let apply it as annotation
+
+
+
+************** refractoring magic numbers
+
+ok let see how to get rid of this magic numbers
+
+the reason why we should avoid using 0 or 1 or number 
+is that they avoid maintainability of your application
+
+but the other dev has no idea what is 0 or 1
+
+here we are gonna define membershiptypes
+under MembershipType class
+
+i made it readonly as i dont want to change it by mistake
+
+public static readonly byte Unknown = 0
+public static readonly byte PayAsYouGo = 1
+
+
+so what about the other memebership types 
+do we need to define all here
+
+
+another solution to refractor a magic number is using a enum
+but we may need casting to byte again to compare
