@@ -258,3 +258,98 @@ if(!ModelState.IsValid)
   this make you Dto's compeletly decoupled from you domain objects
 
   next i will show you how to use automapper to map these objects
+
+
+
+
+
+  ************* auto mapper
+
+  install-package automapper -version:4.1
+
+
+
+  now we need to create a mapping profile to determine how objects of different 
+  types are mapped to each other
+
+  under App_start
+
+  we add a class called mapping profile
+
+  we derive this form Profile which is in AutoMapper
+
+  under ctor
+
+  we init a mapper
+
+  so this is a generic method that takes two parameter
+
+  source and target
+
+  Mapper.CreateMap<Customer, CustomerDto>();
+    Mapper.CreateMap<CustomerDto, Customer>();
+
+its	convention based tool because it used convention of name property
+
+now we need to load this application profile
+when the app start
+
+go we go to the Global.asax
+Mapper.Initilize(c => c.AddProfile<MappingProfile>);
+
+so this was the setup code
+
+
+getCustomers
+
+Customer > CustomerDto
+
+
+we are gonna use Linq method Select
+
+toList().Select(Mapper.Map<Customer, CustomerDto>)
+
+2. getCustomer
+
+here only one single is returned to we cannot use the link select
+
+Mapper.Map<Customer, CustomerDto> (Customer)
+
+we need to change the return type as well
+
+3. CreateCustomer
+
+
+public CustomerDto CreateCustomer(CustomerDto customerDto){
+
+
+
+if(!ModelState.IsValid)
+
+var customer = Mapper.Map<CustomerDto, Customer>(customerDto)
+_context.add
+_savechange
+return custDto
+
+
+
+}
+
+Mapper.Map<CustomerDto,Customer> (customerDto,customerInDb)
+
+next we will talk about camelNotation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
