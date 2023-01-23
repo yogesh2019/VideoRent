@@ -334,6 +334,7 @@ return custDto
 
 
 }
+4. update customer
 
 Mapper.Map<CustomerDto,Customer> (customerDto,customerInDb)
 

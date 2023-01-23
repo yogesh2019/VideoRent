@@ -16,7 +16,7 @@ namespace VideoRent.Dto
         public string Name { get; set; }
 
         public bool IsSubscribedToNewLetter { get; set; }
-         
+
         public byte MembershipTypeId { get; set; }
 
         [Min18YearIfAMember]
