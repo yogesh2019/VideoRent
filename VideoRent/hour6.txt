@@ -340,6 +340,28 @@ Mapper.Map<CustomerDto,Customer> (customerDto,customerInDb)
 
 next we will talk about camelNotation
 
+****************** using camel Notation
+
+the props of this json 
+
+are name using pascal notation
+
+as in js we used camel notation
+
+so now let see how to configure our web api to return camel notation
+
+open WebapiConfig > appStart
+
+so this also has a configuration class
+
+what we will do is 
+
+config.Foramtter.JsonFormatter.SerilizerSettings;
+
+lets store this object
+settings.contracResolver = new CamelcasepropertynamecontractResolver
+setting.formatting = formatting.Indented;
+
 
 
 
